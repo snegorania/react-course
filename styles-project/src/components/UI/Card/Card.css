@@ -1,0 +1,16 @@
+.card {
+    display:block;
+    width: 22rem;
+
+    border-radius: 2rem;
+    
+    font-size: 1rem;
+    color: #000000;
+
+    box-shadow: 0px 2px 2px #787878;
+    z-index: -5;
+
+    outline-color: #333;
+
+    transition: all 0.6s ease;
+}

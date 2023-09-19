@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import CourseGoalListItem from "./components/CourseGoal/CourseGoalListItem/CourseGoalListItem";
+import Button from "./components/UI/Button/Button";
+import Input from "./components/UI/Input/Input";
+import Card from "./components/UI/Card/Card";
 
 function App() {
+  const [val, setVal] = useState("");
+  const handleEnter = (value) => {
+    setVal(value);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Card className={'form'}>
+      <Input id={"goal"} name={"goal"} onEnter={handleEnter} value={val} placeholder={'Enter Goal'}/>
+      <Button />
+    </Card>
+    <CourseGoalListItem goal={'Goal'}/>
     </div>
   );
 }
