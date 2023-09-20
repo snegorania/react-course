@@ -1,4 +1,5 @@
 .input {
+    position: relative;
     display:block;
     width: 20rem;
     height: 3rem;
@@ -18,4 +19,14 @@
     outline-color: #333;
 
     transition: all 0.6s ease;
+}
+
+.input.invalid {
+    border: 1px solid red;
+}
+
+@media(max-width: 540px) {
+    .input {
+        width: 100%;
+    }
 }

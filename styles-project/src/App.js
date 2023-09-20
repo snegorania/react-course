@@ -1,22 +1,29 @@
 import React, { useState } from "react";
 import "./App.css";
-import CourseGoalListItem from "./components/CourseGoal/CourseGoalListItem/CourseGoalListItem";
-import Button from "./components/UI/Button/Button";
-import Input from "./components/UI/Input/Input";
-import Card from "./components/UI/Card/Card";
+import CourseGoalInput from "./components/CourseGoal/CourseGoalInput/CourseGoalInput";
+import CourseGoalList from "./components/CourseGoal/CourseGoalList/CourseGoalList";
+
+const defaultGoals = [
+  {id: '1', goal: 'Make project'},
+  {id: '2', goal: 'End course'},
+  {id: '3', goal: 'Learn react'}
+];
 
 function App() {
-  const [val, setVal] = useState("");
-  const handleEnter = (value) => {
-    setVal(value);
-  };
+  const [goals, setGoals] = useState(defaultGoals);
+  const handleFormSubmit = goal => {
+    setGoals((prev) => {return [goal,...prev]})
+  }
+
+  const handleDelete = id => {
+    setGoals((prev) => {
+      return prev.filter(el => el.id !== id);
+    })
+  }
   return (
-    <div>
-    <Card className={'form'}>
-      <Input id={"goal"} name={"goal"} onEnter={handleEnter} value={val} placeholder={'Enter Goal'}/>
-      <Button />
-    </Card>
-    <CourseGoalListItem goal={'Goal'}/>
+    <div className="wrapper">
+      <CourseGoalInput onFormSubmit={handleFormSubmit}/>
+      <CourseGoalList goals={goals} onDelete={handleDelete}/>
     </div>
   );
 }

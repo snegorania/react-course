@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Input.css";
 
-const Input = ({ id, name, onEnter, value, placeholder}) => {
-  const [val, setVal] = useState(value);
+const Input = ({ id, name, onEnter, value, placeholder, isValid}) => {
 
   const handleChange = ({ target: { value } }) => {
-    setVal(value);
-    onEnter(val);
+    onEnter(value);
   };
 
   return (
@@ -15,10 +13,10 @@ const Input = ({ id, name, onEnter, value, placeholder}) => {
       type="text"
       id={id}
       name={name}
-      value={val}
+      value={value}
       onChange={handleChange}
       placeholder={placeholder}
-      className="input"
+      className={`input ${!isValid && 'invalid'}`}
     />
   );
 };

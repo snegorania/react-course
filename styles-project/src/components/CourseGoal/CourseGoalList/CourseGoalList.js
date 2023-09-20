@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import './CourseGoalList.css';
 import CourseGoalListItem from '../CourseGoalListItem/CourseGoalListItem'
 
-const CourseGoalList = ({goals}) => {
-    const handleGoalClick = id => console.log(id);
+const CourseGoalList = ({goals, onDelete}) => {
+    const handleGoalClick = id => onDelete(id);
     return (
-        <div>
+        <div className='goal-list'>
             {
                 goals.map((el) => {
-                    <CourseGoalListItem key={e.id} goal={el.goal} id={id} onGoalClick={handleGoalClick}/>
+                    return <CourseGoalListItem key={el.id} goal={el.goal} id={el.id} onGoalClick={handleGoalClick}/>
                 })
             }
         </div>
