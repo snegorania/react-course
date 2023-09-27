@@ -24,7 +24,7 @@ function cartReduser(state, action) {
         const updatedtotalAmount = state.totalAmount - existingMeal.price;
         let updatedMeals;
         if(existingMeal.amount === 1) {
-            updatedMeals = state.meals.filter(el => el.id === action.payload);
+            updatedMeals = state.meals.filter(el => el.id !== action.payload);
         } else {
             const updatedMeal = {
                 ...existingMeal,

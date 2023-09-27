@@ -1,4 +1,4 @@
-import React, {useImperativeHandle, useRef} from "react";
+import React from "react";
 import styles from './Input.module.css'
 
 const Input = React.forwardRef(({label, input}, ref) => {

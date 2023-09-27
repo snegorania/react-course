@@ -1,14 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./HeaderCartButton.module.css";
 import CartContext from "../../../store/cart-context";
 
 const HeaderCartButton = ({ onClick }) => {
+  const [btnHilightet, setbtnHilighted] = useState(false)
   const ctx = useContext(CartContext);
 
-  const amount = ctx.meals.reduce((sum, el) => sum + el.amount, 0);
-
+  const { meals } = ctx;
+  useEffect(()=>{
+    if(meals.length === 0) {
+      return;
+    }
+    setbtnHilighted(true);
+    const timeout = setTimeout(() => {
+      setbtnHilighted(false);
+    }, 300)
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [meals])
+  const amount = meals.reduce((sum, el) => sum + el.amount, 0);
+  const btnClasses = `${styles.button} ${btnHilightet && styles.bump}`
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={btnClasses} onClick={onClick}>
       <span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
