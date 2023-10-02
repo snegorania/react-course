@@ -15,6 +15,11 @@ class Users extends React.Component {
       return { showUsers: !prevState.showUsers };
     });
   }
+  componentDidUpdate() {
+    if(this.props.users.length === 0) {
+      throw new Error('Something went wrong...')
+    }
+  }
 
   render() {
     const usersList = (
