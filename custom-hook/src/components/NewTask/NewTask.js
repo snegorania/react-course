@@ -5,15 +5,16 @@ import TaskForm from './TaskForm';
 
 const NewTask = (props) => {
     const {isLoading, error, fetchTasks} = useHttp();
-    const handleData = (data) => {
-        const generatedId = data.name; // firebase-specific => "name" contains generated id
-        const createdTask = { id: generatedId, text: data[data.name].text };
-
-        props.onAddTask(createdTask);
+    
+    const handleData = (taskText, data) => {
+      const generatedId = data.name;
+      const generatedTask = {id: generatedId, text: taskText}
+      console.log(generatedTask);
+      props.onAddTask(generatedTask);
     }
 
   const enterTaskHandler = async (taskText) => {
-    fetchTasks('https://react-learn-project-c7c1a-default-rtdb.firebaseio.com/tasks.json', handleData, {
+    fetchTasks('https://react-learn-project-c7c1a-default-rtdb.firebaseio.com/tasks.json', handleData.bind(null, taskText), {
         method: 'POST',
         body: JSON.stringify({ text: taskText }),
         headers: {

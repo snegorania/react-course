@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import Tasks from './components/Tasks/Tasks';
 import NewTask from './components/NewTask/NewTask';
@@ -7,7 +7,7 @@ import useHttp from './hooks/usehttp';
 function App() {
   const {isLoading, error, fetchTasks} = useHttp();
   const [tasks, setTasks] = useState([]);
-  const tasksHandler = (data) => {
+  const tasksHandler = useCallback((data) => {
     const loadedTasks = [];
 
       for (const taskKey in data) {
@@ -15,14 +15,16 @@ function App() {
       }
 
       setTasks(loadedTasks);
-  }
+  }, [])
 
   useEffect(() => {
     fetchTasks('https://react-learn-project-c7c1a-default-rtdb.firebaseio.com/tasks.json', tasksHandler);
-  }, [fetchTasks]);
+  }, [fetchTasks,tasksHandler]);
 
   const taskAddHandler = (task) => {
-    setTasks((prevTasks) => prevTasks.concat(task));
+    setTasks((prev) => {
+      return [...prev, task]
+    })
   };
 
   return (
