@@ -5,7 +5,8 @@ const CartContext = React.createContext(() => {
         meals: [],
         totalAmount: 0,
         addMeal: () => {},
-        deleteMeal: () => {}
+        deleteMeal: () => {},
+        clearCart: () => {}
     }
 });
 

@@ -1,20 +1,18 @@
 import React from 'react';
 import styles from './Header.module.css';
-
-import mealsImage from '../../../assets/meals.jpg'
+import { AppBar } from '@mui/material';
+import { StyledEngineProvider } from '@mui/material/styles';
+import {Typography} from '@mui/material';
 
 import HeaderCartButton from '../HeaderCartButton/HeaderCartButton';
 
 const Header = ({onShowCart}) => {
-    return <React.Fragment>
-        <header className={styles.header}>
-            <h1>ReactMeals</h1>
+    return <StyledEngineProvider injectFirst>
+        <AppBar className={styles.header}>
+            <Typography component="h1" variant="h1">ReactMeals</Typography>
             <HeaderCartButton onClick={onShowCart}/>
-        </header>
-        <div className={styles['main-image']}>
-            <img src={mealsImage} alt="Meals Image" />
-        </div>
-    </React.Fragment>
+        </AppBar>
+    </StyledEngineProvider>
 };
 
 export default Header

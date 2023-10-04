@@ -19,11 +19,16 @@ const CartContextProvider = ({children}) => {
         dispatchCart({type: "DELETE_MEAL", payload: id});
     }
 
+    const clearHandler = () => {
+        dispatchCart({typr: 'CLEAR'});
+    }
+
     const value = {
         meals: cartState.meals,
         totalAmount: cartState.totalAmount,
         addMeal: addMealHendler,
-        deleteMeal: deleteMealHandler
+        deleteMeal: deleteMealHandler,
+        clearCart: clearHandler
     }
 
     return (

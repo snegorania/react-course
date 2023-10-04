@@ -36,6 +36,9 @@ function cartReduser(state, action) {
         return {meals: updatedMeals, totalAmount: updatedtotalAmount}  
     }
 
+    if(action.type === 'CLEAR') {
+        return { meals: [], totalAmount: 0 }
+    }
     return {meals: [], totalAmount: 0}
 }
 
