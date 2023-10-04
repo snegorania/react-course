@@ -14,7 +14,7 @@ const Checkout = ({ onCancel, onSubmit}) => {
     event.preventDefault();
 
     if (name.isInvalid || street.isInvalid || postal.isInvalid || city.isInvalid) {
-        return;
+      return;
     }
 
     onSubmit({name: name.value, street: street.value, postal: postal.value, city: city.value});

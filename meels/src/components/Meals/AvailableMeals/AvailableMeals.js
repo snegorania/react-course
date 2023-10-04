@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styles from "./AvailableMeals.module.css";
-import { Card } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 import MealItem from "../MealItem/MealItem";
+import { List } from "@mui/material";
 import { useEffect } from "react";
 
 const AvailableMeals = () => {
@@ -29,16 +30,14 @@ const AvailableMeals = () => {
         setMeals(fetchedMeals);
         setLoading(false);
       } else {
-        setLoading(false);
         throw new Error(responce.status);
       }
     }
+      fetchMeals().catch((error) => {
+        setLoading(false);
+        setError(error.message);
+      })
 
-    try {
-      fetchMeals();
-    } catch (error) {
-      setError(error.message);
-    }
   }, []);
 
   const mealsList = meals.map((meal) => (
@@ -54,9 +53,9 @@ const AvailableMeals = () => {
   return (
     <section className={styles.meals}>
       <Card className="card">
-        {loading && <p>Loading...</p>}
-        {error && <p>{error}</p>}
-        {meals.length > 0 && <ul>{mealsList}</ul>}
+        {loading && <Typography component='p' variant="p" style={{textAlign: 'center'}}>Loading...</Typography>}
+        {error && <Typography component='p' variant="p" style={{textAlign: 'center', color: 'red'}}>{error}</Typography>}
+        {meals.length > 0 && <List>{mealsList}</List>}
       </Card>
     </section>
   );

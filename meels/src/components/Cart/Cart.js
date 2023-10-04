@@ -71,7 +71,7 @@ const Cart = ({ onCloseCart }) => {
 
   const actions = (
     <div className={styles.actions}>
-      <button className={styles['button--alt']} onClick={onCloseCart}>
+      <button className={styles['button-alt']} onClick={onCloseCart}>
         Close
       </button>
       <button onClick={() => setIsCheckout(true)} className={styles.button}>
@@ -109,12 +109,12 @@ const Cart = ({ onCloseCart }) => {
       {!isLoading && !isSubmited && !error && cartContent}
       {isLoading && <p>Loading...</p>}
       {isSubmited && (
-        <React.Fragment>
+        <div className={styles.actions}>
           <p>{message}</p>
           <button className={styles["button-alt"]} onClick={handleSubmitClose}>
             Close
           </button>
-        </React.Fragment>
+        </div>
       )}
       {error && <p style={{ color: "red" }}>{error}</p>}
     </Modal>

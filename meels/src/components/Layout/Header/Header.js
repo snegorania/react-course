@@ -7,12 +7,14 @@ import {Typography} from '@mui/material';
 import HeaderCartButton from '../HeaderCartButton/HeaderCartButton';
 
 const Header = ({onShowCart}) => {
-    return <StyledEngineProvider injectFirst>
+    return( 
+    <StyledEngineProvider injectFirst>
         <AppBar className={styles.header}>
             <Typography component="h1" variant="h1">ReactMeals</Typography>
             <HeaderCartButton onClick={onShowCart}/>
         </AppBar>
     </StyledEngineProvider>
+    )
 };
 
 export default Header

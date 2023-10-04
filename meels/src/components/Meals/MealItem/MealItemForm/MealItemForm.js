@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "./MealItemForm.module.css";
 import Input from "../../../UI/Input/Input";
+import { Button } from "@mui/material";
 
 const MealItemForm = ({ onAddToCart }) => {
   const [isValid, setIsvalid] = useState(true);
@@ -33,7 +34,7 @@ const MealItemForm = ({ onAddToCart }) => {
           defaultValue: "1",
         }}
       />
-      <button>+ Add</button>
+      <Button type='submit'>+ Add</Button>
       {!isValid && <p style={{ color: 'red' }}>Please enter a valid amount</p>}
     </form>
   );
