@@ -2,7 +2,8 @@ import classes from "./CheckoutForm.module.css";
 import useInput from "../../../hooks/input-hook";
 
 const isNotEmpty = (value) => value.trim() !== "";
-const isPostalValid = (value) => value.length === 5;
+const postalValidation = /^\d{5}$/;
+const isPostalValid = (value) => postalValidation.test(value);
 
 const Checkout = ({ onCancel, onSubmit}) => {
   const [name, nameFunc] = useInput(isNotEmpty);
