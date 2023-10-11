@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/products');
+      navigate('/products');
     }
   return (
     <>
