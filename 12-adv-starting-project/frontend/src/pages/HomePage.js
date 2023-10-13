@@ -1,5 +1,11 @@
+import PageContent from "../components/PageContent";
+
 const HomePage = () => {
-    return <h2>Home page</h2>
-}
+  return (
+    <PageContent title={"Fancy events application"}>
+      <p>Discover our events!!!</p>
+    </PageContent>
+  );
+};
 
 export default HomePage;

@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[],"users":[{"email":"test@test.com","password":"$2a$12$oB0ivlo0GmifwkB5yrUdKupSejJRGlI9gOMZYJXWIjnS0uQmQoTbW","id":"139af500-0dfa-4a9b-84ef-d0641625658d"},{"email":"test@test1.com","password":"$2a$12$NNO1eJd4wWFRHRxo7cNnc.ey8PAf6lsUzp8PCgt4WhG3MUslr6num","id":"06a88e4c-5b17-483a-98d0-a8e1d77cb287"},{"email":"test3@test.com","password":"$2a$12$DbLTRNjPIQ2M55UPgZmarOFX7ColwiqdnlwsLhJYPeL5Buy49k/LG","id":"dfc60e6d-2611-4406-803a-1ef8ab8a971a"}]}
