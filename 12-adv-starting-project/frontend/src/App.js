@@ -16,7 +16,6 @@ import { logoutAction } from "./pages/Logout";
 import { authLoader } from "./util/getAuthToken";
 import { checkAuthLoader } from "./util/getAuthToken";
 import { newsAction } from "./pages/NewsLetterPage";
-import getAuthToken from "./util/getAuthToken";
 
 const router = createBrowserRouter([
   {

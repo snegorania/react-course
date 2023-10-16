@@ -31,11 +31,10 @@ export function authLoader() {
 
 export function checkAuthLoader() {
     const token = getAuthToken();
-    console.log(`token chek ${token}`);
 
     if (!token) {
         return redirect('/auth');
     }
 
-    return;
+    return null;
 }
