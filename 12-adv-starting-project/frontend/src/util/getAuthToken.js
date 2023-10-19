@@ -25,7 +25,6 @@ export default function getAuthToken() {
 }
 
 export function authLoader() {
-    console.log(`token auth ${getAuthToken()}`);
     return getAuthToken(); 
 }
 

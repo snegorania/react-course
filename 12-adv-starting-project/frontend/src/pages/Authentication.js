@@ -13,21 +13,17 @@ export async function authAction ({request}) {
   console.log(searchParams);
 
   const mode = searchParams.get('mode') || 'login';
-  console.log(mode);
 
   if(mode !== 'login' && mode !== 'signup') {
     throw json({message: 'Error occured! No Mode'}, {status: 404});
   }
 
   const data = await request.formData();
-  console.log(data);
 
   const authData = {
     email: data.get('email'),
     password: data.get('password')
   }
-
-  console.log(authData);
 
   const response = await fetch('http://localhost:8080/' + mode, {
     method: 'POST',
@@ -46,7 +42,6 @@ export async function authAction ({request}) {
   }
 
   const resData = await response.json()
-  console.log(resData);
 
   const token = resData.token;
 
