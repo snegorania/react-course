@@ -43,7 +43,7 @@ class App extends Component {
                 height: state === 'exiting' ? 0 : 100,
                 backgroundColor: "red",
                 margin: "0 auto",
-                opacity: state === 'exiting' ? 0: 100,
+                opacity: state === 'exiting' ? 0: 1,
                 transition: 'all 0.3s ease-out'
               }}
             ></div>
