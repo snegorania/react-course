@@ -24,7 +24,7 @@ describe("Hello component", () => {
     test("render House on Click", () => {
         render(<Hello/>);
         const button = screen.getByRole('button');
-        fireEvent.click(button)
+        fireEvent.click(button);
         const House = screen.getByText('House');
         expect(House).toBeInTheDocument();
     })
