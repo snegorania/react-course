@@ -10,12 +10,12 @@ const NewToDo: React.FC = () => {
     const ctx = useContext(toDosContext);
 
     const submitHandler = (e: React.FormEvent) => {
-        e.preventDefault();
-        const text = inputRef.current!.value;
+      e.preventDefault();
+      const text = inputRef.current!.value;
         if (text.trim().length === 0) {
-            return;
+          return;
         }
-        ctx.addTodo(text);
+      ctx.addTodo(text);
     }
 
   return (

@@ -14,7 +14,7 @@ const Todos: React.FC<{items: ToDo[]}> = ({items}) => {
 
     return (
         <ul className={styles.todos}>
-            {items.map(el => <Todo key={el.id} text={el.text} onRemove={handleRemove.bind(null, el.id)}/>)}
+            {items.map(el => <Todo key={el.id} text={el.text} onRemove={() => handleRemove(el.id)}/>)}
         </ul>
     )
 }
