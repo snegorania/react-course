@@ -1,0 +1,25 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+react-crash-revision/node_modules
+react-crash-revision/.pnp
+react-crash-revision/.pnp.js
+
+# testing
+react-crash-revision//coverage
+
+# production
+react-crash-revision//build
+
+# misc
+react-crash-revision/.DS_Store
+react-crash-revision/.env.local
+react-crash-revision/.env.development.local
+react-crash-revision/.env.test.local
+react-crash-revision/.env.production.local
+
+react-crash-revision/npm-debug.log*
+react-crash-revision/yarn-debug.log*
+react-crash-revision/yarn-error.log*
+
+dummy-backend/node_modules
