@@ -1,0 +1,5 @@
+{
+    "EDIT_MASSAGE": "Отредактируйте <code>src/App.js</code> и сохраните его для перезагрузки.",
+    "LEARN_REACT": "Изучите React",
+    "LOCALIZATION_MASSAGE": "Эта страница была локализована на белорусский и русский языки с помощью i18next и SimpleLocalize"
+}
