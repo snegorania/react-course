@@ -21,7 +21,6 @@ const Results = ({ userInput }) => {
             yearData.valueEndOfYear -
             yearData.year * yearData.annualInvestment -
             userInput.initialInvestment;
-
           let totalAmountInvested = yearData.valueEndOfYear - totalInterest;
           return (
             <tr key={yearData.year}>
